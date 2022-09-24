@@ -40,7 +40,9 @@ function App() {
     <div className="App">
       <Header title="Image gallery yangu" />
       <Search word={word} setword={setWord} handleSubmit={handleSearchSubmit} />
-      {!!images.length && <ImageCard image={images[0]} />}
+      {images.map((image, i) => (
+        <ImageCard key={i} image={image} />
+      ))}
     </div>
   );
 }

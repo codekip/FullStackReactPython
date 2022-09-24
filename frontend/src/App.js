@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Search from './components/Search';
+import ImageCard from './components/ImageCard';
 
 import { useState } from 'react';
 
@@ -26,7 +27,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setImages([data, ...images]);
+        setImages([{ ...data, title: word }, ...images]);
       })
       .catch((err) => console.log(err));
     setWord('');
@@ -39,6 +40,7 @@ function App() {
     <div className="App">
       <Header title="Image gallery yangu" />
       <Search word={word} setword={setWord} handleSubmit={handleSearchSubmit} />
+      {!!images.length && <ImageCard image={images[0]} />}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import ImageCard from './components/ImageCard';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import { useState } from 'react';
 
@@ -16,8 +17,6 @@ const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 function App() {
   const [word, setWord] = useState('');
   const [images, setImages] = useState([]);
-
-  console.log(images);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -35,14 +34,22 @@ function App() {
 
   // console.log(word); // to test rerendering of component every time state changes
   // console.log(process.env);
-
+  const handleDeleteImage = (id) => {
+    setImages(images.filter((image) => image.id !== id));
+  };
   return (
     <div className="App">
       <Header title="Image gallery yangu" />
       <Search word={word} setword={setWord} handleSubmit={handleSearchSubmit} />
-      {images.map((image, i) => (
-        <ImageCard key={i} image={image} />
-      ))}
+      <Container className="mt-4">
+        <Row xs={1} md={2} lg={3}>
+          {images.map((image, i) => (
+            <Col key={i} className="pb-3">
+              <ImageCard deleteImage={handleDeleteImage} image={image} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

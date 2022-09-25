@@ -10,10 +10,12 @@ const Header = ({ title }) => {
   return (
     <Navbar style={navbarStyle}>
       <Container>
-        <Logo style={{ maxWidth: '20rem', maxHeight: '3rem' }} />
+        <Logo alt={title} style={{ maxWidth: '20rem', maxHeight: '3rem' }} />
       </Container>
     </Navbar>
   );
 };
+
+
 
 export default Header;

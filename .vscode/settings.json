@@ -4,6 +4,7 @@
   "source.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.formatDocument"],
   "python.pythonPath": "C:/Users/Nick/Documents/2022Dev/FullStackReactPython/api/.venv",
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true
 }

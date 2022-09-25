@@ -2,5 +2,8 @@
   "editor.tabSize": 2,
   "eslint.validate": ["html", "javascript", "javascriptreact"],
   "source.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.formatDocument"]
+  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.formatDocument"],
+  "python.pythonPath": "C:/Users/Nick/Documents/2022Dev/FullStackReactPython/api/.venv",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
 }

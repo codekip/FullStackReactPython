@@ -10,6 +10,10 @@ load_dotenv(dotenv_path="../.venv/.env.local")
 UNSPLASH_URL = 'https://api.unsplash.com/photos/random'
 UNSPLASH_KEY = os.environ.get("UNSPLASH_KEY", "")
 
+# to disable debug mode, add DEBUG= in env.local. To enable it, delete the DEBUG entry from .env.local
+DEBUG = bool(os.environ.get("DEBUG", True))
+
+print(DEBUG)
 
 if not UNSPLASH_KEY:
     raise EnvironmentError(
@@ -17,6 +21,8 @@ if not UNSPLASH_KEY:
 
 
 app = Flask(__name__)
+
+app.config["DEBUG"] = DEBUG
 
 
 @app.route("/new-image")

@@ -6,7 +6,8 @@ import Search from './components/Search';
 import ImageCard from './components/ImageCard';
 import Welcome from './components/Welcome';
 
-const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5050';
+// const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
 //this was for testing...to  be able to use "word", this function needs to move into the App function below
 // const handleSearchSubmit = (e) => {
@@ -21,9 +22,7 @@ function App() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
-    fetch(
-      `https://api.unsplash.com/photos/random/?query=${word}&client_id=${UNSPLASH_KEY}`
-    )
+    fetch(`${API_URL}/new-image?query=${word}`)
       .then((res) => res.json())
       .then((data) => {
         setImages([{ ...data, title: word }, ...images]);

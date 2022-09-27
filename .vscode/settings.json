@@ -6,5 +6,7 @@
   "python.defaultInterpreterPath": "C:/Users/Nick/Documents/2022Dev/FullStackReactPython/api/.venv",
   "python.linting.pylintEnabled": false,
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true
+  "python.linting.flake8Enabled": true,
+  "python.linting.pycodestyleArgs": ["--max-line-length=88"],
+  "python.formatting.provider": "black"
 }

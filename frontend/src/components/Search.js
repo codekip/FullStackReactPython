@@ -18,7 +18,7 @@ export default function Search({ word, setword, handleSubmit }) {
               </Col>
               <Col>
                 <Button variant="primary" type="submit">
-                  Search Image
+                  Search
                 </Button>
               </Col>
             </Form.Row>
